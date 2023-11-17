@@ -9,10 +9,12 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/lapor" element={<FormLapor />} />
-      </Routes>
+      <main className="bg-[#F5F5DC] flex flex-col items-center">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/lapor" element={<FormLapor />} />
+        </Routes>
+      </main>
       <Footer />
     </Router>
   );

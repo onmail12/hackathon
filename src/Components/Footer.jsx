@@ -2,7 +2,7 @@ import footerIcon from "../assets/logo-lhk 1.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#004225] px-16 py-8 text-white">
+    <footer className="bg-[#004225] px-16 py-8 text-white w-full">
       <img src={footerIcon} alt="" />
       <h4 className="font-bold my-2">
         Dinas Lingkungan Hidup dan Kehutanan Kutai Kartanegara
