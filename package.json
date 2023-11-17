@@ -12,6 +12,7 @@
   "dependencies": {
     "@nextui-org/navbar": "^2.0.27",
     "@nextui-org/react": "^2.2.9",
+    "axios": "^1.6.2",
     "framer-motion": "^10.16.5",
     "mysql2": "^3.6.3",
     "react": "^18.2.0",

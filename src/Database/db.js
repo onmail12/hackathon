@@ -1,26 +1,14 @@
-import { createConnection } from "mysql2/promise";
+import axios from "axios";
 
-const getConnection = async () => {
-  return await createConnection({
-    host: "localhost",
-    user: "root",
-    database: "kupeduli",
-  });
-};
+const url = "http://localhost:3000";
 
-let con = await getConnection();
-
-export const getAllLaporan = async () => {
-  const [data] = await con.query("SELECT * FROM laporan");
-  return data;
-};
-
-export const addLaporan = async (name, email, address, jenisLimbah) => {
-  await con.query(
-    "INSERT INTO laporan (id, nama, email, address, jenis_limbah) VALUES (?,?,?,?,?)",
+export const addLaporan = async ({ name, email, address, wasteType }) => {
+  console.log({ name, email, address, jenis_limbah: wasteType });
+  const response = await axios.post("http://localhost:3000/laporan", {
     name,
     email,
     address,
-    jenisLimbah
-  );
+    jenis_limbah: wasteType,
+  });
+  console.log(response);
 };

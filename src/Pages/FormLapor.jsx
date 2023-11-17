@@ -13,7 +13,7 @@ const FormLapor = () => {
   const [wasteType, setWasteType] = useState("");
 
   const handleSubmit = async () => {
-    await addLaporan(name, email, address, wasteType);
+    await addLaporan({ name, email, address, wasteType });
   };
 
   const limbahItems = ["Limbah Industri", "Limbah Pertanian", "Limbah lainnya"];
