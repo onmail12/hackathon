@@ -2,6 +2,7 @@ import statIcon from "../assets/icon_stat.png";
 import limbah1Img from "../assets/img.jpg";
 import { Button } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
+import LayoutUser from "../Layouts/LayoutUser";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <LayoutUser>
       <section className="flex justify-center items-center mt-32 max-md:flex-col mx-4 ">
         <div className="">
           <h3 className="text-2xl font-bold">Halo buhan Kukar!</h3>
@@ -64,7 +65,7 @@ const Home = () => {
           </div>
         </article>
       </section>
-    </>
+    </LayoutUser>
   );
 };
 
