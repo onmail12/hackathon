@@ -3,17 +3,24 @@ import { Input, Button } from "@nextui-org/react";
 import { Person, At, House, Radioactive } from "react-bootstrap-icons";
 import { useState } from "react";
 import { Select, SelectItem } from "@nextui-org/react";
-
+import axios from "axios";
 import { addLaporan } from "../Database/db";
+import UploadField from "../Components/UploadField";
 
 const FormLapor = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [wasteType, setWasteType] = useState("");
+  const [file, setFile] = useState();
 
   const handleSubmit = async () => {
-    await addLaporan({ name, email, address, wasteType });
+    
+    const formData = new FormData();
+    formData.append("picture", file);
+    
+    // const response = await axios.post("http://localhost:3000/upload", formData);
+    await addLaporan({ name, email, address, wasteType }, formData);
   };
 
   const limbahItems = ["Limbah Industri", "Limbah Pertanian", "Limbah lainnya"];
@@ -70,6 +77,8 @@ const FormLapor = () => {
             </SelectItem>
           ))}
         </Select>
+
+        <UploadField file={file} setFile={setFile} />
 
         <Button onClick={handleSubmit} color="primary">
           Laporkan
